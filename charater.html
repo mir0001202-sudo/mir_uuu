@@ -193,6 +193,61 @@
       setTimeout(() => el.remove(), duration * 1000);
     }
   });
+
+  
+</script>
+<audio id="bg-music" src="Swing_Haven_10_-_Austin_-_Reed_Mathis.mp3" loop></audio>
+<script>
+  document.addEventListener('click', function startMusic() {
+    document.getElementById('bg-music').play();
+    document.removeEventListener('click', startMusic);
+  });
+</script>
+<audio id="bg-music" src="bgm.mp3" loop></audio>
+
+<div id="music-btn" onclick="toggleMusic()" style="
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,253,248,0.92);
+  border: 1px solid #E8DFD0;
+  border-radius: 999px;
+  padding: 10px 18px 10px 14px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  font-family: 'Noto Serif KR', serif;
+  transition: transform 0.15s;
+" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
+  <span id="music-icon" style="font-size:18px;">▶</span>
+  <div>
+    <div style="font-size:11px;color:#9A8E7A;letter-spacing:0.08em;">BGM</div>
+    <div style="font-size:12px;font-weight:600;color:#2A2118;">Swing Haven</div>
+  </div>
+</div>
+
+<script>
+  const music = document.getElementById('bg-music');
+  const icon = document.getElementById('music-icon');
+  let started = false;
+
+  function toggleMusic() {
+    if (!started) {
+      music.play();
+      icon.textContent = '⏸';
+      started = true;
+    } else if (music.paused) {
+      music.play();
+      icon.textContent = '⏸';
+    } else {
+      music.pause();
+      icon.textContent = '▶';
+    }
+  }
 </script>
 </body>
 
