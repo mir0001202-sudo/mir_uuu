@@ -410,3 +410,25 @@ footer {
   .info-grid { grid-template-columns: 1fr; }
   .book-meta { grid-template-columns: 1fr 1fr; }
 }
+
+/* BUY BUTTON */
+.buy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Pretendard';
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 20px rgba(45,122,86,0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(45,122,86,0.35);
+}
