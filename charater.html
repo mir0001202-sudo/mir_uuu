@@ -7,9 +7,8 @@
   <title>꼬마 방장, 레미</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barriecito&family=Barrio&family=Dokdo&family=Grandiflora+One&family=Kirang+Haerang&family=Lancelot&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Barriecito&family=Barrio&family=Black+Han+Sans&family=Diphylleia&family=Do+Hyeon&family=Dokdo&family=Gowun+Batang&family=Grandiflora+One&family=Kirang+Haerang&family=Lancelot&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="charater.css">
   <link rel="stylesheet" href="charater.css">
 </head>
@@ -20,14 +19,14 @@
     <a href="index.html">← 메인 페이지</a>
   </nav>
 
-  <section class="hero" style="background-image: url('img/hero_bg.jpg');">
+  <section class="hero" style="background-image: url('hero_bg.jpg');">
     <div class="hero-badge">Ratatouille · 2007 · Pixar</div>
-    <p class="hero-quote">누구나 요리할 수 있다.</p>
+    <p class="hero-quote">★누구나 요리할 수 있다★</p>
     <h1>꼬마 방장,&nbsp;<em>레미</em></h1>
     <p class="hero-sub">Remy · 파리의 요리사를 꿈꾸는 쥐</p>
     <div class="hero-divider"></div>
     <div class="hero-character">
-      <img src="img/remy.png" alt="레미 캐릭터" />
+      <img src="remy.png" alt="레미 캐릭터" />
     </div>
   </section>
 
@@ -64,22 +63,22 @@
       <h2 class="section-title">레미(Remy)의 성격 특징</h2>
       <div class="traits-grid">
         <div class="trait-card">
-          <div class="trait-icon">★</div>
+          <div class="trait-icon">🧑‍🍳</div>
           <div class="trait-label">열정적인 꿈쟁이</div>
           <p class="trait-desc">쥐라는 신분의 한계에도 불구하고 최고의 요리사가 되겠다는 꿈을 절대 포기하지 않아요.</p>
         </div>
         <div class="trait-card">
-          <div class="trait-icon">◎</div>
+          <div class="trait-icon">🧀</div>
           <div class="trait-label">예민한 감각의 소유자</div>
           <p class="trait-desc">냄새와 맛에 대한 탁월한 감각을 타고났고, 재료의 조합을 직관적으로 파악하는 섬세함이 있어요.</p>
         </div>
         <div class="trait-card">
-          <div class="trait-icon">♦</div>
+          <div class="trait-icon">📜</div>
           <div class="trait-label">정직하고 원칙적인</div>
           <p class="trait-desc">거짓이나 편법보다 진심 어린 방식으로 인정받고 싶어 하고, 옳고 그름에 대한 뚜렷한 기준을 가지고 있어요.</p>
         </div>
         <div class="trait-card">
-          <div class="trait-icon">▲</div>
+          <div class="trait-icon">⚔️</div>
           <div class="trait-label">용감한 도전자</div>
           <p class="trait-desc">두려움과 편견 앞에서도 자신이 믿는 것을 위해 행동으로 나서는 담대함을 가지고 있어요.</p>
         </div>
@@ -91,7 +90,7 @@
       <h2 class="section-title">레미(Remy)의 친구들</h2>
 
       <div class="friend-card">
-        <div class="friend-avatar img"><img src="img/linguini.png" alt="링귀니" /></div>
+        <div class="friend-avatar img"><img src="linguini.png" alt="링귀니" /></div>
         <div class="friend-info">
           <div>
             <p class="friend-name">Alfredo Linguini</p>
@@ -104,7 +103,7 @@
         </div>
       </div>
       <div class="friend-card">
-        <div class="friend-avatar img"><img src="img/gusteau.png" alt="구스토" /></div>
+        <div class="friend-avatar img"><img src="gusteau.png" alt="구스토" /></div>
         <div class="friend-info">
           <div>
             <p class="friend-name">Auguste Gusteau</p>
@@ -116,7 +115,7 @@
         </div>
       </div>
       <div class="friend-card">
-        <div class="friend-avatar img"><img src="img/emile.png" alt="에밀" /></div>
+        <div class="friend-avatar img"><img src="emile.png" alt="에밀" /></div>
         <div class="friend-info">
           <div>
             <p class="friend-name">Emile</p>
@@ -135,93 +134,58 @@
   </footer>
 
 
-  <div id="yt-player" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;bottom:0;left:0;"></div>
-
-  <div id="music-btn" style="
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,253,248,0.92);
-  border: 1px solid #E8DFD0;
-  border-radius: 999px;
-  padding: 10px 18px 10px 14px;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  transition: transform 0.15s, box-shadow 0.15s;
-  font-family: 'Noto Serif KR', serif;
-" onmouseenter="this.style.transform='scale(1.04)'" onmouseleave="this.style.transform='scale(1)'">
-    <span id="music-icon" style="font-size:18px;">▶</span>
-    <div>
-      <div style="font-size:11px;color:#9A8E7A;letter-spacing:0.08em;">Ratatouille OST</div>
-      <div style="font-size:12px;font-weight:600;color:#2A2118;">Le Festin</div>
-    </div>
+  <div style="font-size:12px;font-weight:600;color:#2A2118;">Le Festin</div>
+  </div>
   </div>
 
-  <script>
-    let isPlaying = false;
-    let ytPlayer = null;
+  <style>
+  .cheese-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    user-select: none;
+    animation: cheeseSparkle ease-out forwards;
+  }
+  @keyframes cheeseSparkle {
+    0%   { transform: translate(0, 0) scale(0.3); opacity: 1; }
+    60%  { opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+  }
+</style>
+<script>
+  let lastX = 0, lastY = 0, throttle = false;
+  document.addEventListener('mousemove', function(e) {
+    if (throttle) return;
+    throttle = true;
+    setTimeout(() => throttle = false, 100);
 
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.head.appendChild(tag);
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    const speed = Math.sqrt(dx*dx + dy*dy);
+    lastX = e.clientX; lastY = e.clientY;
+    if (speed < 2) return;
 
-    window.onYouTubeIframeAPIReady = function () {
-      ytPlayer = new YT.Player('yt-player', {
-        width: '1', height: '1',
-        videoId: '-QuVe-hjMs0',
-        playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: '-QuVe-hjMs0' }
-      });
-    };
-
-    document.getElementById('music-btn').addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (!ytPlayer || !ytPlayer.playVideo) return;
-      if (isPlaying) {
-        ytPlayer.pauseVideo();
-        document.getElementById('music-icon').textContent = '▶';
-        isPlaying = false;
-      } else {
-        ytPlayer.playVideo();
-        document.getElementById('music-icon').textContent = '⏸';
-        isPlaying = true;
-      }
-    });
-
-    let lastX = 0, lastY = 0, throttle = false;
-    document.addEventListener('mousemove', function (e) {
-      if (throttle) return;
-      throttle = true;
-      setTimeout(() => throttle = false, 120);
-
-      const dx = e.clientX - lastX;
-      const dy = e.clientY - lastY;
-      const speed = Math.sqrt(dx * dx + dy * dy);
-      lastX = e.clientX; lastY = e.clientY;
-      if (speed < 6) return;
-
-      const count = 2 + Math.floor(Math.random() * 2);
-      for (let i = 0; i < count; i++) {
-        const el = document.createElement('span');
-        el.classList.add('cheese-particle');
-        const offsetX = (Math.random() - 0.5) * 30;
-        const rot = (Math.random() - 0.5) * 360 + 'deg';
-        const duration = 1.0 + Math.random() * 0.6;
-        el.textContent = '🧀';
-        el.style.left = (e.clientX + offsetX) + 'px';
-        el.style.top = e.clientY + 'px';
-        el.style.setProperty('--rot', rot);
-        el.style.animationDuration = duration + 's';
-        el.style.fontSize = (22 + Math.random() * 16) + 'px';
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), duration * 1000);
-      }
-    });
-  </script>
+    const count = 2 + Math.floor(Math.random() * 2);
+    for (let i = 0; i < count; i++) {
+      const el = document.createElement('span');
+      el.classList.add('cheese-particle');
+      const angle = Math.random()* 360;
+      const dist = 20 + Math.random() * 30;
+      const tx = Math.cos(angle * Math.PI / 180) * dist + 'px';
+      const ty = Math.sin(angle * Math.PI / 180) * dist + 'px';
+      const duration = 0.5 + Math.random() * 0.4;
+      el.textContent = '🧀';
+      el.style.left = (e.clientX - 10) + 'px';
+      el.style.top = (e.clientY - 10) + 'px';
+      el.style.setProperty('--tx', tx);
+      el.style.setProperty('--ty', ty);
+      el.style.animationDuration = duration + 's';
+      el.style.fontSize = (70 + Math.random() * 30) + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), duration * 1000);
+    }
+  });
+</script>
 </body>
 
 </html>
