@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>첫 여름, 완주 — 책 소개</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="book.css">
 </head>
+
 <body>
 
   <nav>
@@ -18,7 +22,8 @@
   <section class="hero">
     <div class="container hero-inner">
       <div class="book-cover-wrap">
-        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791199364417.jpg" alt="첫 여름, 완주 표지" class="book-cover" />
+        <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791199364417.jpg" alt="첫 여름, 완주 표지"
+          class="book-cover" />
       </div>
       <div class="hero-text">
         <span class="hero-label">김금희 소설 · 2025</span>
@@ -56,7 +61,8 @@
           친했던 선배 고수미에게 돈을 빼앗기고 목소리까지 잃은 성우 손열매는 선배의 고향 완주 마을로 향한다. 수미는 거기 없고, 열매는 수미 어머니의 매점을 지키며 각양각색의 마을 사람들을 만나게 된다.
         </p>
         <p style="margin-top: 16px;">
-          수수께끼 같은 청년 어저귀, 춤은 좋아하고 슬픈 이야기는 싫어하는 중학생 양미, 은둔 중인 배우 정애라 등 개성 넘치는 인물들과 함께 여름 한 철을 보내며 열매는 잃었던 용기와 목소리를 조금씩 되찾아간다.
+          수수께끼 같은 청년 어저귀, 춤은 좋아하고 슬픈 이야기는 싫어하는 중학생 양미, 은둔 중인 배우 정애라 등 개성 넘치는 인물들과 함께 여름 한 철을 보내며 열매는 잃었던 용기와 목소리를 조금씩
+          되찾아간다.
         </p>
         <p style="margin-top: 16px;">
           슬퍼도, 무너져도 각자 몫의 완주를 해내는 사람들의 이야기. 웃음 속에 담긴 슬픔도, 슬픔 속에 담긴 웃음도 모두 아우르며 삶의 진상을 따뜻하게 그려낸 소설이다.
@@ -72,13 +78,15 @@
           <div class="info-icon">✍</div>
           <div class="info-label">저자</div>
           <div class="info-name">김금희</div>
-          <p class="info-desc">한국 현대 소설 작가. 웃음과 슬픔을 동시에 아우르는 섬세한 시선으로 일상 속 인물들을 그려내는 것으로 유명하다. 《대온실 수리 보고서》 등의 작품이 있다.</p>
+          <p class="info-desc">한국 현대 소설 작가. 웃음과 슬픔을 동시에 아우르는 섬세한 시선으로 일상 속 인물들을 그려내는 것으로 유명하다. 《대온실 수리 보고서》 등의 작품이 있다.
+          </p>
         </div>
         <div class="info-card">
           <div class="info-icon">📖</div>
           <div class="info-label">출판사</div>
           <div class="info-name">무제 (MUZE)</div>
-          <p class="info-desc">배우 박정민이 설립한 출판사. 소외된 존재와 이름 없는 이야기에 귀 기울인다는 철학 아래, 시각장애인을 위한 '듣는 소설' 프로젝트를 기획했다. 고민시, 염정아 등 배우들이 재능기부로 오디오북에 참여했다.</p>
+          <p class="info-desc">배우 박정민이 설립한 출판사. 소외된 존재와 이름 없는 이야기에 귀 기울인다는 철학 아래, 시각장애인을 위한 '듣는 소설' 프로젝트를 기획했다. 고민시, 염정아
+            등 배우들이 재능기부로 오디오북에 참여했다.</p>
         </div>
       </div>
     </section>
@@ -107,8 +115,8 @@
       </div>
 
     </section>
-    
-<!-- 구매 버튼 -->
+
+    <!-- 구매 버튼 -->
     <section class="section" style="text-align: center; padding: 48px 0;">
       <a href="https://product.kyobobook.co.kr/detail/S000218854090" target="_blank" class="buy-btn">
         📚 교보문고에서 구매하기
@@ -120,5 +128,56 @@
     401 Web Design · 책 소개 과제 · 첫 여름, 완주 © 김금희 / 무제
   </footer>
 
+  <style>
+    .leaf {
+      position: fixed;
+      top: -40px;
+      font-size: 20px;
+      animation: leafFall linear infinite;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    @keyframes leafFall {
+      0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      50% {
+        transform: translateY(50vh) rotate(180deg) translateX(var(--sway));
+      }
+
+      90% {
+        opacity: 0.4;
+      }
+
+      100% {
+        transform: translateY(105vh) rotate(360deg) translateX(calc(var(--sway) * 2));
+        opacity: 0;
+      }
+    }
+  </style>
+  <script>
+    const emojis = ['🍃', '🌿', '🌿', '🌼'];
+    for (let i = 0; i < 14; i++) {
+      const el = document.createElement('span');
+      el.classList.add('leaf');
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = (Math.random() * 100) + 'vw';
+      el.style.fontSize = (14 + Math.random() * 16) + 'px';
+      el.style.animationDuration = (6 + Math.random() * 8) + 's';
+      el.style.animationDelay = (Math.random() * 8) + 's';
+      el.style.setProperty('--sway', (Math.random() - 0.5) * 120 + 'px');
+      document.body.appendChild(el);
+    }
+  </script>
+
 </body>
+
 </html>
