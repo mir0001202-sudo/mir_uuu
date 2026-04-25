@@ -1,43 +1,352 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="ko">
 <head>
-    <title>401_homework</title>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design — 401 과제</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF6EF;
+      --warm-white: #FFFDF8;
+      --remy-blue: #3B6B8A;
+      --remy-blue-pale: #EEF5FA;
+      --mustard: #C8883A;
+      --mustard-light: #F5E6CC;
+      --text-dark: #2A2118;
+      --text-mid: #5A4E3C;
+      --text-light: #9A8E7A;
+      --border: #E8DFD0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Serif KR', serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-badge {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.12em;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--warm-white);
+      padding: 80px 48px 72px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: 'WD';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 200px;
+      font-weight: 700;
+      color: rgba(232, 223, 208, 0.4);
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--remy-blue);
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      max-width: 440px;
+      line-height: 1.9;
+    }
+    .hero-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--mustard);
+      margin-top: 32px;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ASSIGNMENTS */
+    .assignments-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .assignment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .assignment-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .assignment-item:hover {
+      border-color: var(--remy-blue);
+      transform: translateX(4px);
+    }
+    .assignment-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--border);
+      min-width: 40px;
+      line-height: 1;
+    }
+    .assignment-item:hover .assignment-num {
+      color: var(--mustard);
+    }
+    .assignment-content { flex: 1; }
+    .assignment-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .assignment-sub {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+    .assignment-arrow {
+      font-size: 18px;
+      color: var(--border);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .assignment-item:hover .assignment-arrow {
+      color: var(--remy-blue);
+      transform: translateX(4px);
+    }
+
+    /* INTRO */
+    .intro-section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .intro-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--remy-blue);
+      border-radius: 0 12px 12px 0;
+      padding: 28px 32px;
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    /* COMMENTS */
+    .comments-section {
+      padding: 64px 0 80px;
+    }
+    #disqus_thread {
+      margin-top: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--warm-white);
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-label   { animation: fadeUp 0.5s ease both 0s; }
+    .hero h1      { animation: fadeUp 0.5s ease both 0.1s; }
+    .hero-desc    { animation: fadeUp 0.5s ease both 0.2s; }
+    .hero-divider { animation: fadeUp 0.5s ease both 0.3s; }
+
+    @media (max-width: 640px) {
+      nav { padding: 14px 24px; }
+      .hero { padding: 48px 24px 48px; }
+      .hero h1 { font-size: 36px; }
+      .hero::after { font-size: 120px; }
+      .container { padding: 0 24px; }
+      .assignment-item { padding: 18px 20px; gap: 16px; }
+    }
+  </style>
 </head>
-
 <body>
-    <h1><a href="index.html">Web Design</a></h1>
-    <ol>
-        <li><a href="1.html">책 소개</a></li>
-        <li><a href="charater/charater.html">캐릭터 사이트 제작</a></li>
-        <li><a href="3.html">포트폴리오 웹사이트 제작</a></li>
-        <li><a href="4.html">웹사이트 UI제작</a></li>
-    </ol>
 
-    <h2>안녕하세요</h2>
-    웹디자인 과제 업로드 페이지 입니다.
-<p>
-    <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://webdesign-10.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</p>
+  <nav>
+    <a href="index.html" class="nav-logo">Web Design</a>
+    <span class="nav-badge">401 과제 모음</span>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">2024 · Web Design Class</span>
+      <h1>과제 <em>업로드</em><br>페이지</h1>
+      <p class="hero-desc">웹디자인 수업 과제 모음입니다.<br>각 항목을 클릭하면 해당 과제 페이지로 이동합니다.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- 과제 목록 -->
+    <section class="assignments-section">
+      <h2 class="section-title">Assignments</h2>
+      <div class="assignment-list">
+
+        <a href="1.html" class="assignment-item">
+          <span class="assignment-num">01</span>
+          <div class="assignment-content">
+            <p class="assignment-title">책 소개</p>
+            <p class="assignment-sub">Book Introduction</p>
+          </div>
+          <span class="assignment-arrow">→</span>
+        </a>
+
+        <a href="charater/charater.html" class="assignment-item">
+          <span class="assignment-num">02</span>
+          <div class="assignment-content">
+            <p class="assignment-title">캐릭터 사이트 제작</p>
+            <p class="assignment-sub">Character Site — Ratatouille</p>
+          </div>
+          <span class="assignment-arrow">→</span>
+        </a>
+
+        <a href="3.html" class="assignment-item">
+          <span class="assignment-num">03</span>
+          <div class="assignment-content">
+            <p class="assignment-title">포트폴리오 웹사이트 제작</p>
+            <p class="assignment-sub">Portfolio Website</p>
+          </div>
+          <span class="assignment-arrow">→</span>
+        </a>
+
+        <a href="4.html" class="assignment-item">
+          <span class="assignment-num">04</span>
+          <div class="assignment-content">
+            <p class="assignment-title">웹사이트 UI 제작</p>
+            <p class="assignment-sub">Website UI Design</p>
+          </div>
+          <span class="assignment-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 인사말 -->
+    <section class="intro-section">
+      <h2 class="section-title">안녕하세요</h2>
+      <div class="intro-box">
+        웹디자인 과제 업로드 페이지입니다.<br>
+        수업에서 진행한 과제들을 모아 정리했어요.
+      </div>
+    </section>
+
+    <!-- 방명록 (Disqus) -->
+    <section class="comments-section">
+      <h2 class="section-title">방명록</h2>
+      <div id="disqus_thread"></div>
+      <script>
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://webdesign-10.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>를 보려면 JavaScript를 활성화해주세요.
+      </noscript>
+    </section>
+
+  </div>
+
+  <footer>
+    401 Web Design · 과제 업로드 페이지
+  </footer>
 
 </body>
 </html>
