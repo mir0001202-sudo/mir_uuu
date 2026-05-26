@@ -74,7 +74,6 @@ nav ul {
 
 /*header*/
 header{
-
     position: relative;
     top: 0px;
     padding-top: 100px;
@@ -82,9 +81,10 @@ header{
     padding-left: 100px;
     padding-right: 100px;
     margin-bottom: 150px;
-    background-image: url(/web/img/background_color.png);
+    background-image: url(../img/background_color.png);
     background-size: cover;
 }
+
 header::after{
     content: '';
     position: absolute;
