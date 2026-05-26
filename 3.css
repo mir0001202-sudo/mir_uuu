@@ -1,0 +1,248 @@
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.profile {
+    font-family: "Baskervville", serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*nav*/
+nav ul li {
+    display: inline-block;
+    margin: 0px 43px;
+    padding: 0px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    background-color: #d9a2a9b0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* Safari 대응 */
+    padding: 5px 38px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.nav-back {
+    font-size: 13px;
+    color: #d1858e;
+    text-decoration: none;
+    padding-top: 30px;
+    letter-spacing: 0.9px;
+    transition: color 0.2s;
+}
+
+.nav-back:hover {
+    color: #fff93c;
+}
+
+.nav-badge {
+    font-size: 13px;
+    padding-top: 30px;
+    color: #d1858e;
+    letter-spacing: 0.9px;
+}
+
+nav ul {
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/*header*/
+header{
+
+    position: relative;
+    top: 0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 150px;
+    background-image: url(/web/img/background_color.png);
+    background-size: cover;
+}
+header::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom,transparent,white);
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 120%;
+    margin-top: 10%;
+    background: linear-gradient(
+    90deg,
+    #ffa8b5, #d1ff9d, #a8dcff, #ffa8b5
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  from { background-position: 0% center; }
+  to   { background-position: 200% center; }
+}
+
+ul li {
+    list-style: none;
+    margin: 10px;
+    line-height: 120%;
+}
+
+.button {
+    border: 1px solid #d1858e;
+    text-decoration: none;
+    color: #d1858e;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 10px 0px;
+}
+
+.button:hover {
+    color: #fff93c;
+}
+
+.intro-img {
+    box-shadow: 3px 3px 80px #d1858e;
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 14px;
+    color: #d1858e;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*--1--*/
+.experience {
+    text-align: center;
+    margin-top: -50px;
+
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px; 
+    
+}
+p{
+    line-height: 120%;
+}
+
+.skills {
+    text-align: center;
+    font-size: 15px;
+    line-height: 120%;
+    margin-bottom: 150px;
+    padding: 0;
+    list-style: none;
+}
+
+/*project*/
+.project {
+    margin: 50px 0px;
+    padding: 0px;
+}
+
+.project img{
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+.container{
+    padding: 100px;
+}
+.right-text{
+    text-align: right;
+}
+
+.green{
+    background-color: #d379839c;
+    background-size: cover;
+}
+/*--3--*/
+.img03{
+    width: 80%;
+    height: auto;
+    margin: 10px;
+}
+
+
+@media(max-width:768px) {
+    nav{
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+        gap:30px;
+    }
+
+    nav ul li{
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .nav-back, .nav-badge{
+        padding-top: 0;
+        font-size: 10px;
+    }
+}
+
+/*--footer--*/
+footer{
+    text-align: center;
+    margin: 50px;
+}
+
+footer h3 {
+    font-size: 20px;
+}
