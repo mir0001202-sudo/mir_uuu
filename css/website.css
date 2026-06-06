@@ -1,0 +1,395 @@
+/* =========================================================
+   bloomtide — 메인페이지 스타일
+   디자인 토큰은 :root 에서 한 번에 관리합니다.
+   ========================================================= */
+
+:root {
+  --pink:        #ef76b1;   /* 메인 핑크 */
+  --pink-light:  #fcecf0;   /* 연핑크 */
+  --gray:        #cccccc;   /* BEST 라벨 회색 */
+  --black:       #111111;
+  --white:       #ffffff;
+
+  --maxw: 1600px;           /* 콘텐츠 최대 폭 */
+  --radius: 60px;           /* 카드 라운드 */
+
+  /* 히어로 배경 이미지 — 실제 배포 시 images/hero.jpg 등으로 교체하세요 */
+  --hero-img: url('https://www.figma.com/api/mcp/asset/d8a7df42-7cba-4893-a8c9-6784cac91ccb');
+  /* 데코 배너 배경 */
+  --banner-img: url('https://www.figma.com/api/mcp/asset/4c9fa238-1eee-47e9-b4d4-2d253d932540');
+}
+
+/* ---------- 리셋 ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* =========================================================
+   헤더 / 네비게이션 (히어로 위에 투명하게 얹힘)
+   ========================================================= */
+.nav {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  color: var(--white);
+}
+
+.nav__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(18px, 2.5vw, 36px) clamp(20px, 4vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav__group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(14px,1.6vw,26px);
+}
+
+.nav__link {
+  font-weight: 500;
+  font-size: clamp(20px, 2.5vw, 40px);
+  letter-spacing: 0.02em;
+}
+
+.nav__logo { flex: 0 0 auto; }
+
+.nav__logo img {
+  height: clamp(28px, 3.2vw, 48px);
+  width: auto;
+}
+
+.icon-btn {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px;
+  display: grid;
+  place-items: center;
+}
+
+.icon-btn svg,
+.icon-btn img {
+  width: clamp(24px, 2.4vw, 36px);
+  height: clamp(24px, 2.4vw, 36px);
+  object-fit: contain;
+  transition: transform .2s ease;
+}
+.icon-btn:hover svg,
+.icon-btn:hover img { transform: scale(1.12); }
+
+/* =========================================================
+   히어로
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  overflow: hidden;            /* 옆으로 넘친 슬라이드 숨김 */
+  display: flex;
+  align-items: flex-end;
+}
+
+/* 슬라이드 트랙 — 가로로 늘어선 이미지들 */
+.hero__track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transition: transform .2s ease;   /* 옆으로 미끄러지는 효과 */
+}
+.hero__slide {
+  flex: 0 0 100%;              /* 한 장이 화면을 꽉 채움 */
+  background: center / cover no-repeat;
+}
+
+/* 글자는 슬라이드 위로 */
+.hero__content { position: relative; z-index: 2; }
+
+/* 양옆 화살표 — 평소엔 숨김 */
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: clamp(40px, 4vw, 60px);
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .35);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0;                       /* 기본 숨김 */
+  transition: opacity .25s ease, background .2s ease;
+}
+.hero__arrow svg { width: 55%; height: 55%; }
+.hero__arrow--prev { left: clamp(12px, 2vw, 32px); }
+.hero__arrow--next { right: clamp(12px, 2vw, 32px); }
+.hero__arrow:hover { background: rgba(255, 255, 255, .65); }
+
+/* 히어로에 마우스를 올리면 화살표 등장 */
+.hero:hover .hero__arrow { opacity: 1; }
+
+.hero__content {
+  max-width: var(--maxw);
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 130px) clamp(20px, 4vw, 72px);
+  color: var(--white);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+}
+
+.hero__title {
+  font-weight: 700;
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 1.05;
+}
+
+.hero__desc {
+  margin-top: clamp(20px, 2.6vw, 40px);
+  font-weight: 700;
+  font-size: clamp(18px, 3vw, 35px);
+  line-height: 1.35;
+}
+
+.btn-pill {
+  display: inline-block;
+  margin-top: clamp(24px, 3vw, 48px);
+  background: var(--white);
+  color: var(--black);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 32px);
+  padding: clamp(12px, 1.2vw, 22px) clamp(28px, 3vw, 50px);
+  border-radius: 999px;
+  text-shadow: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 5px #ef76b159;
+}
+
+/* =========================================================
+   공통 섹션 타이틀
+   ========================================================= */
+.section-title {
+  color: var(--pink);
+  font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 48px);
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   카테고리
+   ========================================================= */
+.category {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(60px, 7vw, 120px) clamp(20px, 4vw, 100px);
+}
+
+.category__grid {
+  margin-top: clamp(28px, 3.6vw, 60px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 40px);
+}
+
+.cat-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  transition: transform .3s ease;
+}
+.cat-card:hover { transform: translateY(-8px) rotate(-2deg); 
+}
+.cat-card img { width: 100%; height: auto; }
+
+.cat-card__label {
+  position: absolute;
+  color: var(--pink-light);
+  font-weight: 700;
+  font-size: clamp(22px, 2.8vw, 48px);
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+/* =========================================================
+   BEST
+   ========================================================= */
+.best {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 4vw, 100px);
+}
+
+.best__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(28px, 4vw, 90px);
+  align-items: start;
+}
+
+/* 큰 대표 이미지 */
+.best__feature {
+  position: relative;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 780 / 1230;
+}
+.best__feature img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.best__feature:hover img { transform: scale(1.04); }
+
+
+
+/* 헤더 라벨 줄 */
+.best__head {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(14px, 1.6vw, 28px);
+  font-size: clamp(26px, 3.4vw, 48px);
+  font-weight: 700;
+}
+.best__tag-new  { color: var(--pink); }
+.best__tag-best { color: var(--gray); }
+.best__shop     { margin-left: auto; color: var(--black); }
+.best__shop:hover { color: var(--pink); }
+
+/* 상품 2 x 2 */
+.product-grid {
+  margin-top: clamp(28px, 3vw, 56px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 56px) clamp(20px, 2.4vw, 48px);
+}
+
+.product { display: block; }
+
+.product__thumb {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 0 40px rgba(252, 236, 240, .9);
+  aspect-ratio: 1 / 1;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.product__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.product:hover .product__thumb {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 44px rgba(239, 118, 177, .35);
+}
+
+.product__sub {
+  margin-top: clamp(14px, 1.4vw, 22px);
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(13px, 1.1vw, 20px);
+}
+.product__name {
+  margin-top: 6px;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(18px, 1.7vw, 32px);
+}
+.product__price {
+  margin-top: 6px;
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(16px, 1.6vw, 30px);
+}
+
+/* =========================================================
+   데코 배너
+   ========================================================= */
+.banner {
+  margin-top: clamp(40px, 6vw, 100px);
+  height: clamp(280px, 42vw, 760px);
+  background: var(--banner-img) center / cover no-repeat;
+}
+
+/* =========================================================
+   푸터
+   ========================================================= */
+.footer {
+  background: var(--pink);
+  color: var(--pink-light);
+  padding: clamp(40px, 4vw, 60px) clamp(20px, 4vw, 53px) clamp(40px, 4vw, 60px);
+}
+
+.footer__deco {
+  height: clamp(40px, 4.5vw, 87px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: .9;
+}
+.footer__deco--bottom { margin-top: clamp(30px, 4vw, 70px); }
+
+.footer__logo {
+  width: min(86%, 1647px);
+  height: auto;
+  margin: clamp(40px, 5vw, 90px) auto clamp(30px, 4vw, 60px);
+}
+
+.footer__info { max-width: var(--maxw); margin: 0 auto; }
+
+.footer__contact {
+  font-weight: 700;
+  font-size: clamp(14px, 1.7vw, 32px);
+  line-height: 1.5;
+}
+.footer__terms {
+  margin-top: clamp(14px, 1.4vw, 26px);
+  font-weight: 400;
+  font-size: clamp(11px, 1.25vw, 24px);
+  line-height: 1.7;
+}
+.footer__terms b { font-weight: 700; }
+
+/* =========================================================
+   반응형 — 태블릿
+   ========================================================= */
+@media (max-width: 900px) {
+  .best__grid { grid-template-columns: 1fr; }
+  .best__feature { aspect-ratio: 16 / 11; max-height: 70vh; }
+}
+
+/* =========================================================
+   반응형 — 모바일
+   ========================================================= */
+@media (max-width: 560px) {
+  .hero { min-height: 78vh; }
+
+  .nav__group--right { gap: 12px; }
+
+  /* 카테고리 3개 → 가로 스크롤 없이 그대로 한 줄 유지하되 라벨 축소 */
+  .category__grid { gap: 10px; }
+
+  /* 상품 2 x 2 유지 (모바일 쇼핑몰 표준) */
+  .product-grid { gap: 20px 14px; }
+
+  .footer__terms br { display: none; }
+}
