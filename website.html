@@ -1,15 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
-<head>
-    <title>401_homework_웹사이트UI제작</title>
-    <meta charset="utf-8">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>웹사이트UI제작</title>
+
+<!-- Pretendard 폰트 -->
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+
+<link rel="stylesheet" href="css/website.css" />
 </head>
 
 <body>
-    <a href="index.html">메인 페이지</a>
+  <!-- 헤더 / 네비게이션  -->
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="nav__group nav__group--left">
+        <a href="#" class="nav__link">SHOP</a>
+        <button class="icon-btn" aria-label="검색">
+          <img src="img/famicons_search-outline.svg" alt="검색" />
+        </button>
+      </div>
 
-    <h1>웹사이트 UI제작</h1>
+      <a href="#" class="nav__logo" aria-label="bloomtide 홈">
+        <!-- 이미지 1: 네비 로고 (bloomtide 워드마크, 흰색) -->
+        <img src="img/LOGO.svg" />
+      </a>
+
+      <div class="nav__group nav__group--right">
+        <button class="icon-btn" aria-label="찜">
+          <img src="img/solar_heart-bold.svg">
+
+        </button>
+        <button class="icon-btn" aria-label="장바구니">
+          <img src="img/famicons_bag.svg">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 히어로  -->
+  <!-- 이미지 2: 히어로 배경 (모델) -->
+  <section class="hero">
+    <!-- 슬라이드 트랙: 이미지들을 가로로 이어 붙임 -->
+    <div class="hero__track">
+      <div class="hero__slide" style="background-image:url('img/hero-1.png')"></div>
+      <div class="hero__slide" style="background-image:url('img/hero-2.png')"></div>
+      <div class="hero__slide" style="background-image:url('img/hero-3.png')"></div>
+    </div>
+
+    <!-- 양옆 화살표 -->
+    <button class="hero__arrow hero__arrow--prev" aria-label="이전 이미지">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m15 6-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <button class="hero__arrow hero__arrow--next" aria-label="다음 이미지">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m9 6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <!-- 글자·버튼 (이미지 위에 그대로) -->
+    <div class="hero__content">
+      <h1 class="hero__title">Bloom Tide UP!!</h1>
+      <p class="hero__desc">
+        모찌처럼 포근하고, 과일처럼 생생한 컬러.<br />
+        한 입의 신선함이 당신의 입술에
+      </p>
+      <a href="#" class="btn-pill">VIEW MORE</a>
+    </div>
+  </section>
+
+  <!-- 카테고리  -->
+  <section class="category">
+    <h2 class="section-title">CATEGORY</h2>
+    <div class="category__grid">
+      <a href="#" class="cat-card">
+        <!-- 이미지 3: LIP 꽃모양 -->
+        <img src="https://www.figma.com/api/mcp/asset/33589616-17d5-4293-b7ba-a15a7ef621e1" alt="" />
+        <span class="cat-card__label">LIP</span>
+      </a>
+      <a href="#" class="cat-card">
+        <!-- 이미지 4: EYE 꽃모양 -->
+        <img src="https://www.figma.com/api/mcp/asset/2a3640c9-0232-468e-91d1-8d3f5308029a" alt="" />
+        <span class="cat-card__label">EYE</span>
+      </a>
+      <a href="#" class="cat-card">
+        <!-- 이미지 5: FACE 꽃모양 -->
+        <img src="https://www.figma.com/api/mcp/asset/9640e5e9-c48d-4311-abfb-ab429da9d377" alt="" />
+        <span class="cat-card__label">FACE</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== BEST ===================== -->
+  <section class="best">
+    <div class="best__grid">
+      <!-- 큰 대표 이미지 -->
+      <a href="#" class="best__feature">
+        <!-- 이미지 6: BEST 대표 -->
+        <img src="https://www.figma.com/api/mcp/asset/fce2eabb-10a9-43c2-84eb-ef3fc3931528" alt="대표 상품" />
+
+      </a>
+
+      <div class="best__right">
+        <div class="best__head">
+          <span class="best__tag-new">NEW</span>
+          <span class="best__tag-best">BEST</span>
+          <a href="#" class="best__shop">SHOP</a>
+        </div>
+
+        <div class="product-grid">
+          <!-- 상품 1 -->
+          <a href="#" class="product">
+            <div class="product__thumb">
+              <!-- 이미지 7: 상품1 -->
+              <img src="https://www.figma.com/api/mcp/asset/72ec02f5-4721-4224-8f8f-03688fd28d1d" alt="비튼 피치" />
+            </div>
+            <p class="product__sub">블룸타이트 플레쉬 립글로스</p>
+            <p class="product__name">비튼 피치</p>
+            <p class="product__price">₩15,000</p>
+          </a>
+          <!-- 상품 2 -->
+          <a href="#" class="product">
+            <div class="product__thumb">
+              <!-- 이미지 8: 상품2 -->
+              <img src="https://www.figma.com/api/mcp/asset/31385bd6-52d8-4204-919c-248ccc807e01" alt="블랙 스트로베리" />
+            </div>
+            <p class="product__sub">블룸타이트 플레쉬 립글로스</p>
+            <p class="product__name">블랙 스트로베리</p>
+            <p class="product__price">₩15,000</p>
+          </a>
+          <!-- 상품 3 -->
+          <a href="#" class="product">
+            <div class="product__thumb">
+              <!-- 이미지 9: 상품3 -->
+              <img src="https://www.figma.com/api/mcp/asset/7e33f838-97ef-4628-9f18-9c296c8cd2bf" alt="비튼 피그" />
+            </div>
+            <p class="product__sub">블룸타이트 플레쉬 립글로스</p>
+            <p class="product__name">비튼 피그</p>
+            <p class="product__price">₩15,000</p>
+          </a>
+          <!-- 상품 4 -->
+          <a href="#" class="product">
+            <div class="product__thumb">
+              <!-- 이미지 10: 상품4 -->
+              <img src="https://www.figma.com/api/mcp/asset/72aa5fa6-7cb1-4271-8638-858ed900959e" alt="화이트 스트로베리" />
+            </div>
+            <p class="product__sub">블룸타이트 플레쉬 립글로스</p>
+            <p class="product__name">화이트 스트로베리</p>
+            <p class="product__price">₩15,000</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 데코 배너 ===================== -->
+  <!-- 이미지 11: 데코 배너 배경 -->
+  <section class="banner" aria-hidden="true"></section>
+
+  <!-- ===================== 푸터 ===================== -->
+  <footer class="footer">
+    <!-- 이미지 12: 나비 아이콘 줄 (상단) -->
+    <div class="footer__deco footer__deco--top"
+      style="background-image:url('https://www.figma.com/api/mcp/asset/6afa6dfa-c559-4aa3-9c3e-344c1a5138b1')"></div>
+
+    <!-- 이미지 13: 큰 로고 -->
+    <img class="footer__logo" src="https://www.figma.com/api/mcp/asset/50ed4b3a-d607-42da-b30e-e6766afe5add"
+      alt="bloomtide" />
+
+    <div class="footer__info">
+      <p class="footer__contact">
+        010-6721-1369 &nbsp;&nbsp; K-SALES@bloomtide.co.kr &nbsp;&nbsp; 월요일 - 금요일 ( 09:00 - 17:00 ) &nbsp;&nbsp;
+        토요일·일요일·공휴일 휴무
+      </p>
+      <p class="footer__terms">
+        © bloomtide. &nbsp;|&nbsp; 회사소개 &nbsp;|&nbsp; 이용약관 &nbsp;|&nbsp; 개인정보처리방침 &nbsp;|&nbsp; 이용안내 &nbsp;|&nbsp;
+        <b>상호명</b> 피플앤코 &nbsp;|&nbsp; <b>대표자명</b> 최재수 &nbsp;|&nbsp;
+        <b>사업장 주소</b> 07805 서울 강서구 마곡중앙4로 70 칠공타워 &nbsp;|&nbsp;<br />
+        <b>대표 전화</b> 01044332335 &nbsp;|&nbsp; <b>사업자 등록번호</b> 1178175206 &nbsp;|&nbsp;
+        <b>개인정보보호책임자</b> 피플앤코
+      </p>
+    </div>
+
+    <!-- 이미지 12: 나비 아이콘 줄 (하단) -->
+    <div class="footer__deco footer__deco--bottom"
+      style="background-image:url('https://www.figma.com/api/mcp/asset/6afa6dfa-c559-4aa3-9c3e-344c1a5138b1')"></div>
+  </footer>
+
+  <script>
+    (function () {
+      const hero = document.querySelector('.hero');
+      const track = hero.querySelector('.hero__track');
+      const total = track.children.length;
+      let index = 0, timer;
+
+      function go(i) {
+        index = (i + total) % total;              // 끝 ↔ 처음 순환
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+      const next = () => go(index + 1);
+      const prev = () => go(index - 1);
+
+      const start = () => timer = setInterval(next, 8000);  // 4초마다 자동
+      const stop = () => clearInterval(timer);
+      const reset = () => { stop(); start(); };
+
+      hero.querySelector('.hero__arrow--next').addEventListener('click', () => { next(); reset(); });
+      hero.querySelector('.hero__arrow--prev').addEventListener('click', () => { prev(); reset(); });
+
+      start();
+      hero.addEventListener('mouseenter', stop);   // 마우스 올리면 멈춤
+      hero.addEventListener('mouseleave', start);  // 떼면 다시 시작
+    })();
+  </script>
 </body>
 
 </html>
